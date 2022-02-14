@@ -125,6 +125,7 @@ export default class Dropdown extends PureComponent {
     baseColor: PropTypes.string,
 
     itemTextStyle: Text.propTypes.style,
+    labelTextStyle: Text.propTypes.style,
 
     itemCount: PropTypes.number,
     itemPadding: PropTypes.number,
@@ -447,7 +448,14 @@ export default class Dropdown extends PureComponent {
 
   renderBase(props) {
     let { value } = this.state;
-    let { data, renderBase, labelExtractor, dropdownOffset, renderAccessory = this.renderAccessory } = this.props;
+    let {
+      data,
+      renderBase,
+      labelExtractor,
+      labelTextStyle,
+      dropdownOffset,
+      renderAccessory = this.renderAccessory
+    } = this.props;
 
     let index = this.selectedIndex();
     let title;
@@ -468,7 +476,7 @@ export default class Dropdown extends PureComponent {
 
     return (
       <TextInput
-        style={{ backgroundColor: "transparent", marginBottom: 16 }}
+        style={[{ backgroundColor: "transparent", marginBottom: 16 }, labelTextStyle]}
         label=""
         {...props}
         value={title}
@@ -600,6 +608,7 @@ export default class Dropdown extends PureComponent {
       renderAccessory,
       containerStyle,
       labelContainerStyle,
+      labelTextStyle,
       overlayStyle: overlayStyleOverrides,
       pickerStyle: pickerStyleOverrides,
 
