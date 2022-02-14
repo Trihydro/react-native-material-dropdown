@@ -63,7 +63,8 @@ export default class Dropdown extends PureComponent {
     textColor: "rgba(0, 0, 0, .87)",
     itemColor: "rgba(0, 0, 0, .54)",
     baseColor: "rgba(0, 0, 0, .38)",
-
+    labelPlaceholderColor: "#A5A8AE",
+    labelValueColor: "#fff",
     itemCount: 4,
     itemPadding: 8,
 
@@ -123,6 +124,8 @@ export default class Dropdown extends PureComponent {
     selectedItemColor: PropTypes.string,
     disabledItemColor: PropTypes.string,
     baseColor: PropTypes.string,
+    labelPlaceholderColor: PropTypes.string,
+    labelValueColor: PropTypes.string,
 
     itemTextStyle: Text.propTypes.style,
     labelTextStyle: Text.propTypes.style,
@@ -453,6 +456,8 @@ export default class Dropdown extends PureComponent {
       renderBase,
       labelExtractor,
       labelTextStyle,
+      labelPlaceholderColor,
+      labelValueColor,
       dropdownOffset,
       renderAccessory = this.renderAccessory
     } = this.props;
@@ -476,9 +481,10 @@ export default class Dropdown extends PureComponent {
 
     return (
       <TextInput
-        style={[{ backgroundColor: "transparent", marginBottom: 16 }, labelTextStyle]}
         label=""
         {...props}
+        style={[{ backgroundColor: "transparent", marginBottom: 16 }, labelTextStyle]}
+        theme={{ colors: { placeholder: labelPlaceholderColor, text: labelValueColor } }}
         value={title}
         editable={false}
         onChangeText={undefined}
