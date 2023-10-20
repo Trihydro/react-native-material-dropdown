@@ -35,7 +35,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/mdslab87/react-native-material-dropdown.git"
+    "url": "git://github.com/Trihydro/react-native-material-dropdown.git"
   },
   "peerDependencies": {
     "react": "*",
