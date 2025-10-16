@@ -9,7 +9,6 @@ import {
   TouchableWithoutFeedback,
   Dimensions,
   Platform,
-  ViewPropTypes,
   I18nManager
 } from "react-native";
 import Ripple from "react-native-material-ripple";
@@ -17,7 +16,7 @@ import { TextInput } from "react-native-paper";
 
 import DropdownItem from "../item";
 import styles from "./styles";
-import { TextPropTypes } from 'deprecated-react-native-prop-types';
+import { ViewPropTypes, TextPropTypes } from 'deprecated-react-native-prop-types';
 
 
 export default class Dropdown extends PureComponent {
@@ -143,10 +142,10 @@ export default class Dropdown extends PureComponent {
     renderBase: PropTypes.func,
     renderAccessory: PropTypes.func,
 
-    labelContainerStyle: (ViewPropTypes || View.propTypes).style,
-    containerStyle: (ViewPropTypes || View.propTypes).style,
-    overlayStyle: (ViewPropTypes || View.propTypes).style,
-    pickerStyle: (ViewPropTypes || View.propTypes).style,
+    labelContainerStyle: ViewPropTypes.style,
+    containerStyle: ViewPropTypes.style,
+    overlayStyle: ViewPropTypes.style,
+    pickerStyle: ViewPropTypes.style,
     supportedOrientations: PropTypes.arrayOf(PropTypes.string),
 
     useNativeDriver: PropTypes.bool
