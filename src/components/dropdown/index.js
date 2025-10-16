@@ -17,6 +17,8 @@ import { TextInput } from "react-native-paper";
 
 import DropdownItem from "../item";
 import styles from "./styles";
+import { TextPropTypes } from 'deprecated-react-native-prop-types';
+
 
 export default class Dropdown extends PureComponent {
   static defaultProps = {
@@ -127,8 +129,8 @@ export default class Dropdown extends PureComponent {
     labelPlaceholderColor: PropTypes.string,
     labelValueColor: PropTypes.string,
 
-    itemTextStyle: Text.propTypes.style,
-    labelTextStyle: Text.propTypes.style,
+    itemTextStyle: TextPropTypes.style,
+    labelTextStyle: TextPropTypes.style,
 
     itemCount: PropTypes.number,
     itemPadding: PropTypes.number,
